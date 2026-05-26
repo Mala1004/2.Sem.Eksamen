@@ -1,84 +1,119 @@
-.footer .menu {
-    display: flex;
-    flex-direction: column;
-}
-
 .products-list{
-	background-color: red;
+/*Gør min div med mine individuelle produkter, til en flexboks*/
 	display: flex;
 }
 
 .products {
+/* Layouter mine produkter, med grid */
   display: grid;
+/* Laver kolonner der fylder lige meget(1fr), som aldrig kan blive mindre end 0 */
   grid-template-columns: repeat(3, minmax(0, 1fr));
+/* Afstand imellem indholdet */
   gap: 20px;
+/* Padding omkring hele mit grid*/
   padding: 20px;
+/*Fylder 100% af products-list*/
   width: 100%;
+/* Paddign og border inkluderes i bredden */
   box-sizing: border-box;
-	  align-items: stretch;
+/*Sørger for at mine produkt "cards" er lige høje*/
+  align-items: stretch;
 }
-.item-container {
-  display: flex;
-  flex-direction: column;
-  height: 100%;
-}
+/*Container til hvert produkt*/
 .item {
+/* Fylder 100% af bredden, af .products */
   width: 100%;
+/* Sørger for at den max fylder 100% */
   max-width: 100%;
+/* Paddign og border inkluderes i bredden */
   box-sizing: border-box;
+/* Sætter baggrundsfarven, på mine "cards" */
   background-color: #F79D8C;
 }
+/* Container til indholdet, af hvert produkt */
+.item-container {
+/* Gøres til flexboks */
+  display: flex;
+/* Placerer indholdet over hinanden */
+  flex-direction: column;
+/* Gør den lige så høj som dens forældre, .item */
+  height: 100%;
+}
+/* Styrer billederne for hvert produkt */
 .item img {
+/* Bredde på 80% */
   width: 80%;
+/* Højden justeres automatisk */
   height: auto;
+/* Gør billedet til et blok element, og giver det en linje for sig selv */
   display: block;
+/* Afrunder hjørnerne */
   border-radius: 8px;
+/* Placerer centreret */
 	justify-self: center;
 	margin-top: 15px;
 	margin-bottom: 15px;
 }
+/* Rammer overskrifter og paragraphs på mine proukt cards */
 .item h3,
 .item p {
+/* Giver en padding på 10 px omkring teksten */
   padding-left: 10px;
 }
+/* Rammer beholderen til knapperne, på mine cards */
 .book-actions {
+/* Placerer knapperne ens, på alle cards */
   margin-top: auto;
+/* Gør beholderen til en flexbox */
   display: flex;
+/* Laver 10px mellemrum imellem knapperne */
   gap: 10px;
+/* Placerer knapperne over hinanden */
   flex-direction: column;
 }
-
+/* Rammer mine 2 knapper, download og read online */
 .download-btn,
 .read-btn {
+/* Gør dem til blok elementer, og giver dem deres egen række */
   display: block;
+/* Centrerer teksten */
   text-align: center;
+/* Laver padding omkring dem */
   padding: 8px 10px;
+/* Afrunder hjørnerne */
   border-radius: 6px;
+/* Fjerne streg under teksten */
   text-decoration: none;
+/* Fastlægger tekst størelse */
   font-size: 13px;
+/* Giver dem en margin på 10px */
 	margin: 10px;
 }
-
+/* Rammer download knap */
 .download-btn {
+/* Giver sort baggrund */
   background: black;
+/* Giver hvid tekst */
   color: white;
 }
-
+/* Rammer read online knap */
 .read-btn {
+/* Giver grå baggrund */
   background: #eee;
+/* Giver sort tekst */
   color: black;
 }
-.wp-block-columns,
-.wp-block-column {
-  overflow: visible;
-}
 
+/* Laver en regel for skærme der er mindre end 900px */
 @media (max-width: 900px) {
+	/* Laver mit grid layout om til 2 rækker */
   .products {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
+/* Laver en regel for skærme der er mindre end 600px */
 @media (max-width: 600px) {
+/* Laver mit grid layout om til 1 række */
   .products {
     grid-template-columns: repeat(1, minmax(0, 1fr));
   }
