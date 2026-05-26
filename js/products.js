@@ -1,12 +1,21 @@
+//Her er samlingen af mine bøger i et array.
+//Her fortæller den at vi nu har en konstant, ved navn "products", der refererer til følgende objekter
 const products = [
+  //Forklaringen af dataen i mit array er ens for alle, derfor forklarer jeg den første, som eksempel
   {
+    //Unikt id, der kan bruges til at finde det rigtige produkt
     id: 1,
+    //Titel på bogen
     name: "A Dictionary Of Colors",
+    //Forfatter
     author: "Sanzo Wada",
+    //Beskrivelse af bogen
     description:
       "A Dictionary Of Colors is a seminal work in color theory. Wada, a Japanese artist, costume designer, and teacher, created this work to blend traditional Japanese color sensibilities with Western-influenced, modern color research. The book is in japanese, however it contains more than 100 pages of colorcombinations, for you to use. ",
     image:
+      //Stien til den specifikke fil i den rigtige mappe
       "/wp-content/themes/kadence/library-indhold/a-dictionary-of-colors/cover1.png",
+    //Selve filen, der indeholder bogen 
     pdf: "/wp-content/themes/kadence/library-indhold/a-dictionary-of-colors/a-dictionary-of-color-combinations-vol-1-vol-1-bilingualnbsped-4861522471-9784861522475_compress.pdf",
   },
   {
