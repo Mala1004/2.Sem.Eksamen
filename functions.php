@@ -30,22 +30,32 @@ require get_template_directory() . '/inc/functions.php';
 // Initialize the theme.
 call_user_func( 'Kadence\kadence' );
 
-// HERFRA SÆTTER JEG TING IND
+// HERFRA SKRIVER JEG SELV KODE i dokumentet, der er automatisk oprettet af Wordpress
 
+//Funktion der skal køre, når Wordpress indlæser scripts
 add_action('wp_enqueue_scripts', function() {
+	//Beder specifikt om at indlæse den fil, der indeholder mit product array.
   wp_enqueue_script(
     'products-js',
+	  //Stien til filen med arrayet
     get_template_directory_uri() . '/js/products.js',
+	//Definerer at denne ikke er afhængig af andra scripts
     array(),
+	//Ingen specifik version
     null,
+	//Beder om at loade script, før body
     true
   );
-
+  //Beder om at indlæse den fil der hedder main.js
   wp_enqueue_script(
     'main-js',
+	  //Stien til filen med min funktion
     get_template_directory_uri() . '/js/main.js',
+	  //Fortæller at denne side, er afhængig af mit array med produkter, og at products.js derfor skal læses først
     array('products-js'),
+	  //filetime beder om at lave en specifik version/navn, der hjælper wordpress med at vide, om der skal hentes en ny version. 
     filemtime(get_template_directory() . '/js/main.js'),
+	  //Beder om at loade script, før body
     true
   );
 });
