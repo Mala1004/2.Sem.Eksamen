@@ -1,0 +1,85 @@
+.footer .menu {
+    display: flex;
+    flex-direction: column;
+}
+
+.products-list{
+	background-color: red;
+	display: flex;
+}
+
+.products {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 20px;
+  padding: 20px;
+  width: 100%;
+  box-sizing: border-box;
+	  align-items: stretch;
+}
+.item-container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+.item {
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+  background-color: #F79D8C;
+}
+.item img {
+  width: 80%;
+  height: auto;
+  display: block;
+  border-radius: 8px;
+	justify-self: center;
+	margin-top: 15px;
+	margin-bottom: 15px;
+}
+.item h3,
+.item p {
+  padding-left: 10px;
+}
+.book-actions {
+  margin-top: auto;
+  display: flex;
+  gap: 10px;
+  flex-direction: column;
+}
+
+.download-btn,
+.read-btn {
+  display: block;
+  text-align: center;
+  padding: 8px 10px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-size: 13px;
+	margin: 10px;
+}
+
+.download-btn {
+  background: black;
+  color: white;
+}
+
+.read-btn {
+  background: #eee;
+  color: black;
+}
+.wp-block-columns,
+.wp-block-column {
+  overflow: visible;
+}
+
+@media (max-width: 900px) {
+  .products {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+@media (max-width: 600px) {
+  .products {
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+  }
+}
